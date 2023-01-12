@@ -10,8 +10,19 @@ g++ split.cpp test_split.cpp -o test_split
 */
 
 #include "split.h"
+#include <iostream>
+using namespace std;
 
 int main(int argc, char* argv[])
 {
+    Node* x = nullptr;
+    //Node* y = new Node(1, x);
+    //Node* z = new Node(0, y);
+    //
+    Node* evens = nullptr;
+    Node* odds = nullptr;
 
+    split(x, odds, evens);
+    
+    
 }
