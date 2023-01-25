@@ -63,9 +63,11 @@ void ULListStr::pop_back()
     if(tail_->last == tail_->first + 1) 
     {
       Item* temp = tail_->prev;
-      delete tail_;
+      delete  tail_;
       tail_ = temp;
+      
       if(tail_ == NULL) head_ = NULL;
+      else tail_->next = NULL;
     } else 
     {
       tail_->last--;
@@ -81,9 +83,11 @@ void ULListStr::pop_front()
     if(head_->last == head_->first + 1) 
     {
       Item* temp = head_->next;
+      //delete head_->val;
       delete head_;
       head_ = temp;
       if(head_ == NULL) tail_ = NULL;
+      else head_->prev = NULL;
     } else 
     {
       head_->first++;
@@ -153,7 +157,7 @@ std::string* ULListStr::getValAtLoc(size_t loc) const
 
   }
   */
-  int i = 0;
+  //int i = 0;
   while(dummy!=NULL) 
   {
     //cout<<"i: "<<i<<endl;
@@ -169,6 +173,7 @@ std::string* ULListStr::getValAtLoc(size_t loc) const
     dummy = dummy->next;
     
   }
+  return NULL;
   //std::cout<<"got val. loc: "<<loc<<", size_: "<<size_<<std::endl;
   
   //cout<<"loc:"<<loc<<endl;
